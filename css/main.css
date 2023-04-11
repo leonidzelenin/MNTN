@@ -17,8 +17,14 @@ body {
   color: #fff;
 }
 
-h1, h2, h3, h4, h5, h6, p {
-    margin: 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
 }
 
 /* BASE */
@@ -107,6 +113,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .nav a:hover::after {
+  background-color: #fbd784;
   bottom: 0px;
   opacity: 1;
 }
@@ -136,6 +143,95 @@ h1, h2, h3, h4, h5, h6, p {
   height: 20px;
   background-image: url("./../icons/account.svg");
   background-size: contain;
+}
+
+.nav-button {
+  position: relative;
+  z-index: 9;
+  display: none;
+  height: 25px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background: none;
+}
+
+.nav-button:focus,
+.nav-button:active {
+  outline: none;
+}
+
+.nav-button-icon {
+  position: relative;
+  display: block;
+  width: 42px;
+  height: 5px;
+  border: none;
+  background-color: #fff;
+}
+
+.nav-button-icon::before {
+  position: absolute;
+  left: 0;
+  top: -10px;
+  content: "";
+  display: block;
+  width: 42px;
+  height: 5px;
+  background-color: #fff;
+}
+
+.nav-button-icon::after {
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  content: "";
+  display: block;
+  width: 42px;
+  height: 5px;
+  background-color: #fff;
+}
+
+.nav-button-close .nav-button-icon {
+  background-color: transparent;
+}
+
+.nav-button-close .nav-button-icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.nav-button-close .nav-button-icon::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: none;
+  /*display: flex;*/
+  flex-direction: column;
+  justify-content: space-between;
+  width: 320px;
+  height: 100%;
+  padding: 70px 70px 50px 30px;
+  background-color: rgba(11, 29, 38, 0.8);
+}
+
+.mobile-nav .nav,
+.mobile-nav .account {
+  display: block;
+}
+
+.mobile-nav .nav ul {
+  flex-direction: column;
+}
+
+.mobile-nav .nav ul li {
+  margin: 0;
+  margin-bottom: 25px;
 }
 
 /*HERO*/
